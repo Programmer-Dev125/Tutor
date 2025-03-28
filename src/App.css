@@ -1,42 +1,192 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("./rootstyle.css");
+
+.link {
+  font-size: 16px;
+  color: #5e9d71;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.page-title {
+  font-size: 30px;
+  color: #5d7a5d;
+}
+.link:hover {
+  color: #5d7a5d;
+  font-weight: bold;
+}
+.title {
+  font-size: 16px;
+  color: #050505;
+}
+.text {
+  font-size: 14px;
+  color: #050505;
+}
+.bold {
+  color: #5e9d71;
+  font-weight: bold;
+}
+.course-title {
+  font-size: 25px;
+  color: #5e9d71;
+}
+header nav button {
+  width: fit-content;
+  padding: 12px 20px;
+  color: #ffffff;
+  background-color: #5e9d71;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+header .about-title {
+  font-size: 30px;
+  color: #050505;
+}
+header .about-title span {
+  color: #5e9d71;
+}
+header .about-img {
+  height: 500px;
+}
+.g3.g20 img {
+  width: 100%;
+  height: 300px;
+}
+.g3.g20 .card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0px 0px 20px 0px;
+  position: relative;
+}
+.g3.g20 .card .icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 10px;
+  background-color: #5e9d71;
+}
+.g3.g20 .card .icon-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 10px;
+  background-color: #5e9d71;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+header .circle-top {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(34, 139, 34, 0.1);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+header .circle-bottom {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: -1;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(34, 139, 34, 0.1);
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.contact-img {
+  width: 100%;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+  padding: 12px 15px;
+  background: none;
+  resize: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #111111;
+}
+.contact-form button {
+  width: fit-content;
+  padding: 10px 30px;
+  border: 1px solid #cccccc;
+  color: #111111;
+  font-size: 16px;
+  letter-spacing: 2px;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.contact-form button:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+footer {
+  border-top: 1px solid #cccccc;
+  padding: 20px 0px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive design */
+@media (max-width: 1280px) {
+  .main-app {
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+  .flex-box-row.sp-between.align-center.content-row {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  .flex-box-row.sp-between.align-center.content-row .w50 {
+    width: 100%;
+  }
+  .flex-box-row.sp-between.align-center.content-row .wfit.relative {
+    margin: 0px auto;
+    text-align: center;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  .course-section .g3.g20 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-section .flex-box-row.sp-between.align-center.relative {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .contact-section .flex-box-row.sp-between.align-center.relative .w60,
+  .contact-form {
+    width: 100%;
+  }
+  .contact-img {
+    width: 100%;
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@media (max-width: 550px) {
+  header nav.flex-box-row.align-center.sp-between.mt40 {
+    flex-direction: column;
+    gap: 30px;
+  }
+  header
+    nav.flex-box-row.align-center.sp-between.mt40
+    .flex-box-row.align-center.sp-between.w30 {
+    width: 100%;
+    text-align: center;
+  }
+  .course-section .g3.g20 {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
